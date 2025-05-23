@@ -8,6 +8,23 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.classList.toggle('active');
             mobileMenuToggle.classList.toggle('active');
         });
+        
+        // Close mobile menu when clicking on navigation links
+        const navLinkItems = navLinks.querySelectorAll('a');
+        navLinkItems.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            }
+        });
     }
     
     // Smooth scrolling for anchor links

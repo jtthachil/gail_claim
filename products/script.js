@@ -12,12 +12,23 @@ const quoteForm = document.getElementById('quote-form');
 if (mobileMenuToggle && navLinks) {
     mobileMenuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
+        mobileMenuToggle.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on navigation links
+    const navLinkItems = navLinks.querySelectorAll('a');
+    navLinkItems.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+        });
     });
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!mobileMenuToggle.contains(e.target) && !navLinks.contains(e.target)) {
             navLinks.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
         }
     });
 }
