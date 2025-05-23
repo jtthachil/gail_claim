@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Integration Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 50px;
+            background: #f8fafc;
+        }
+        .demo-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .demo-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+        .demo-description {
+            color: #6b7280;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .demo-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 10px;
+        }
+        .demo-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+        .demo-features {
+            margin-top: 40px;
+            text-align: left;
+        }
+        .demo-features h3 {
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+        .demo-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        .demo-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: #4b5563;
+        }
+        .demo-features li::before {
+            content: "✓";
+            color: #059669;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 class="demo-title">Calendar Integration Demo</h1>
+        <p class="demo-description">
+            Test the Calendly integration with custom intro text, modal interface, 
+            and automatic thank you page. Click the button below to see it in action.
+        </p>
+        
+        <a href="#" class="demo-button book-call-btn">Book Free 30-Min Call</a>
+        
+        <div class="demo-features">
+            <h3>Features Demonstrated:</h3>
+            <ul>
+                <li>Modal overlay with custom intro text</li>
+                <li>Calendly widget for 30-minute slots</li>
+                <li>Automatic thank you page after booking</li>
+                <li>Mobile-responsive design</li>
+                <li>Event tracking and analytics ready</li>
+                <li>Email confirmation system (ready for integration)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Calendar Modal -->
+    <div id="calendar-modal" class="calendar-modal">
+        <div class="calendar-content">
+            <button class="calendar-close" id="calendar-close">&times;</button>
+            <div class="calendar-header">
+                <h3>Book Your Free 30-Minute Intake Call</h3>
+                <p class="calendar-intro">"This is your time. Tell us everything. We'll listen."</p>
+                <p class="calendar-description">
+                    During this confidential call, we'll discuss your situation, answer your questions, 
+                    and help you understand your options. No pressure, no sales pitch—just genuine support 
+                    and clarity about your next steps.
+                </p>
+            </div>
+            <!-- Calendly inline widget -->
+            <div class="calendly-inline-widget" 
+                 data-url="https://calendly.com/claimclarity/30min-intake-call?hide_event_type_details=1&hide_gdpr_banner=1"
+                 data-processed="true">
+            </div>
+        </div>
+    </div>
+
+    <!-- Thank You Page -->
+    <div id="thank-you-page" class="thank-you-page">
+        <div class="thank-you-content">
+            <div class="thank-you-icon">🎉</div>
+            <h1 class="thank-you-title">Thank You for Booking!</h1>
+            <p class="thank-you-subtitle">Your intake call has been scheduled successfully.</p>
+            
+            <div class="thank-you-details">
+                <h4>What Happens Next?</h4>
+                <ul>
+                    <li>You'll receive a confirmation email with your call details</li>
+                    <li>We'll send you a brief preparation guide 24 hours before your call</li>
+                    <li>During the call, we'll discuss your situation in complete confidence</li>
+                    <li>You'll get clear guidance on your options and next steps</li>
+                    <li>If we can help, we'll explain our services and pricing transparently</li>
+                </ul>
+                
+                <div class="next-steps">
+                    <h5>Prepare for Your Call:</h5>
+                    <p>
+                        Think about your workplace situation, any incidents or patterns that concern you, 
+                        and how your work has affected your mental health. Don't worry about having 
+                        everything perfect—we're here to help you work through it all.
+                    </p>
+                </div>
+            </div>
+            
+            <a href="#" class="back-to-site" id="back-to-site">
+                ← Back to Demo
+            </a>
+        </div>
+    </div>
+
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const calendarModal = document.getElementById('calendar-modal');
+            const calendarClose = document.getElementById('calendar-close');
+            const bookCallBtns = document.querySelectorAll('.book-call-btn');
+            const thankYouPage = document.getElementById('thank-you-page');
+            const backToSiteBtn = document.getElementById('back-to-site');
+            
+            // Open calendar modal
+            bookCallBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openCalendarModal();
+                });
+            });
+            
+            // Close calendar modal
+            if (calendarClose) {
+                calendarClose.addEventListener('click', function() {
+                    closeCalendarModal();
+                });
+            }
+            
+            // Close modal when clicking outside
+            if (calendarModal) {
+                calendarModal.addEventListener('click', function(e) {
+                    if (e.target === calendarModal) {
+                        closeCalendarModal();
+                    }
+                });
+            }
+            
+            // Back to demo functionality
+            if (backToSiteBtn) {
+                backToSiteBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    hideThankYouPage();
+                });
+            }
+            
+            function openCalendarModal() {
+                if (calendarModal) {
+                    calendarModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    
+                    // Initialize Calendly widget if not already done
+                    if (window.Calendly) {
+                        window.Calendly.initInlineWidget({
+                            url: 'https://calendly.com/claimclarity/30min-intake-call',
+                            parentElement: document.querySelector('.calendly-inline-widget'),
+                            prefill: {},
+                            utm: {
+                                utmCampaign: 'ClaimClarity Demo',
+                                utmSource: 'Demo Page',
+                                utmMedium: 'Intake Call'
+                            }
+                        });
+                    }
+                }
+            }
+            
+            function closeCalendarModal() {
+                if (calendarModal) {
+                    calendarModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            function showThankYouPage() {
+                if (thankYouPage) {
+                    document.querySelector('.demo-container').style.display = 'none';
+                    thankYouPage.classList.add('active');
+                    closeCalendarModal();
+                    window.scrollTo(0, 0);
+                }
+            }
+            
+            function hideThankYouPage() {
+                if (thankYouPage) {
+                    document.querySelector('.demo-container').style.display = 'block';
+                    thankYouPage.classList.remove('active');
+                    window.scrollTo(0, 0);
+                }
+            }
+            
+            // Listen for Calendly events
+            window.addEventListener('message', function(e) {
+                if (e.data.event && e.data.event.indexOf('calendly') === 0) {
+                    if (e.data.event === 'calendly.event_scheduled') {
+                        // Event was scheduled, show thank you page
+                        setTimeout(() => {
+                            showThankYouPage();
+                            console.log('Demo: Event scheduled!', e.data.event_details);
+                        }, 1000);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Think Your Job is Damaging Your Mental Health? | Psychological Injury Claims</title>
+    <meta name="description" content="Find out if you have a psychological injury claim. Get expert guidance and support for workplace mental health issues in Australia.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Calendly CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>ClaimClarity</h2>
+            </div>
+            <div class="nav-links">
+                <a href="#quiz">Take Quiz</a>
+                <a href="../products/index.html">Products</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#" class="nav-cta book-call-btn">Book Free Call</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Think your job is damaging your <span class="highlight">mental health?</span>
+                </h1>
+                <p class="hero-subtitle">
+                    You're not alone. Thousands of Australian workers suffer psychological injuries due to toxic workplaces, inadequate support, and employer negligence. You deserve to be heard—and potentially compensated.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">73%</span>
+                        <span class="stat-text">of workers experience workplace stress</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">$543M</span>
+                        <span class="stat-text">paid in psychological injury claims annually</span>
+                    </div>
+                </div>
+                <a href="#quiz" class="hero-cta">
+                    Find Out If You Have a Claim
+                    <span class="cta-arrow">→</span>
+                </a>
+                <p class="hero-disclaimer">Free assessment • No obligation • Completely confidential</p>
+            </div>
+            <div class="hero-image">
+                <div class="hero-visual">
+                    <div class="floating-card card-1">
+                        <div class="card-icon">😰</div>
+                        <p>"I dread going to work every day"</p>
+                    </div>
+                    <div class="floating-card card-2">
+                        <div class="card-icon">🚫</div>
+                        <p>"My concerns are always dismissed"</p>
+                    </div>
+                    <div class="floating-card card-3">
+                        <div class="card-icon">😴</div>
+                        <p>"Work stress affects my sleep"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="quiz-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Quick Assessment: Do You Have a Claim?</h2>
+                <p>Answer 6 simple questions to understand your situation better</p>
+            </div>
+            <!-- Quiz will be embedded here -->
+            <div id="quiz-embed" class="quiz-embed">
+                <div id="quiz-container" class="quiz-container">
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <span class="progress-text" id="progress-text">Question 1 of 6</span>
+                    </div>
+                    
+                    <div class="quiz-content" id="quiz-content">
+                        <div class="question-container" id="question-container">
+                            <h3 class="question-title" id="question-title"></h3>
+                            <p class="question-description" id="question-description"></p>
+                            
+                            <div class="answer-options">
+                                <button class="answer-btn" data-value="2" id="yes-btn">
+                                    <span class="answer-icon">✓</span>
+                                    <span class="answer-text">Yes</span>
+                                </button>
+                                <button class="answer-btn" data-value="1" id="unsure-btn">
+                                    <span class="answer-icon">?</span>
+                                    <span class="answer-text">Unsure</span>
+                                </button>
+                                <button class="answer-btn" data-value="0" id="no-btn">
+                                    <span class="answer-icon">✗</span>
+                                    <span class="answer-text">No</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-navigation">
+                            <button class="nav-btn" id="prev-btn" disabled>Previous</button>
+                            <button class="nav-btn primary" id="next-btn" disabled>Next</button>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-results" id="quiz-results" style="display: none;">
+                        <div class="results-content">
+                            <div class="result-icon" id="result-icon"></div>
+                            <h3 class="result-title" id="result-title"></h3>
+                            <p class="result-message" id="result-message"></p>
+                            <div class="result-score">
+                                <span>Your Score: </span>
+                                <span class="score-value" id="score-value"></span>
+                                <span> out of 12</span>
+                            </div>
+                            <div class="result-actions">
+                                <button class="btn-primary book-call-btn">Book Free 30-Minute Intake Call</button>
+                                <button class="btn-secondary" id="retake-btn">Retake Assessment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Matters Section -->
+    <section class="why-matters">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Why This Matters</h2>
+                <p>Psychological injuries are real, compensable, and more common than you think</p>
+            </div>
+            
+            <div class="matters-grid">
+                <div class="matters-column">
+                    <h3>Common Psychological Injuries</h3>
+                    <ul class="injury-list">
+                        <li>
+                            <span class="injury-icon">🧠</span>
+                            <div>
+                                <strong>Anxiety Disorders</strong>
+                                <p>Persistent worry, panic attacks, social anxiety related to work situations</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="injury-icon">😔</span>
+                            <div>
+                                <strong>Depression</strong>
+                                <p>Persistent sadness, loss of interest, feelings of hopelessness about work</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="injury-icon">💥</span>
+                            <div>
+                                <strong>PTSD</strong>
+                                <p>From workplace trauma, bullying, or witnessing distressing events</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="injury-icon">😵</span>
+                            <div>
+                                <strong>Burnout Syndrome</strong>
+                                <p>Emotional exhaustion, cynicism, reduced sense of accomplishment</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="matters-column">
+                    <h3>Common Workplace Causes</h3>
+                    <ul class="cause-list">
+                        <li>
+                            <span class="cause-icon">👥</span>
+                            <div>
+                                <strong>Workplace Bullying</strong>
+                                <p>Harassment, intimidation, or systematic mistreatment by colleagues or supervisors</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cause-icon">📈</span>
+                            <div>
+                                <strong>Excessive Workload</strong>
+                                <p>Unrealistic deadlines, impossible targets, chronic understaffing</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cause-icon">❓</span>
+                            <div>
+                                <strong>Role Ambiguity</strong>
+                                <p>Unclear expectations, conflicting instructions, lack of proper training</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cause-icon">🚫</span>
+                            <div>
+                                <strong>Lack of Support</strong>
+                                <p>Dismissive management, ignored complaints, inadequate resources</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="matters-stats">
+                <div class="stat-card">
+                    <span class="stat-big">1 in 4</span>
+                    <p>Australian workers experience a mental health condition each year</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-big">$17.8B</span>
+                    <p>Annual cost of workplace mental health issues to the economy</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-big">94%</span>
+                    <p>Of psychological injury claims are work-related stress</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do Differently Section -->
+    <section class="different">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>What We Do Differently</h2>
+                <p>We're not lawyers. We're better. We're your claim clarity companions.</p>
+            </div>
+
+            <div class="different-grid">
+                <div class="different-item">
+                    <div class="different-icon">💝</div>
+                    <h3>Empathetic Support</h3>
+                    <p>No call centers. No rushed consultations. Just genuine, caring guidance from people who understand what you're going through.</p>
+                    <div class="vs-others">
+                        <span class="us">Us: Personal, empathetic guidance</span>
+                        <span class="them">Others: Call-center style support</span>
+                    </div>
+                </div>
+
+                <div class="different-item">
+                    <div class="different-icon">🎯</div>
+                    <h3>Actionable Guidance</h3>
+                    <p>We don't just tell you "maybe you have a case." We give you clear, step-by-step guidance on exactly what to do next.</p>
+                    <div class="vs-others">
+                        <span class="us">Us: Clear action plans & next steps</span>
+                        <span class="them">Others: Vague advice & uncertainty</span>
+                    </div>
+                </div>
+
+                <div class="different-item">
+                    <div class="different-icon">🧭</div>
+                    <h3>Navigator Experience</h3>
+                    <p>Our App Navigator stays with you through the entire process—from assessment to submission—ensuring nothing falls through the cracks.</p>
+                    <div class="vs-others">
+                        <span class="us">Us: End-to-end support until submission</span>
+                        <span class="them">Others: One-off consultations</span>
+                    </div>
+                </div>
+
+                <div class="different-item">
+                    <div class="different-icon">⚡</div>
+                    <h3>Fast & Structured</h3>
+                    <p>Get clarity in 30 minutes, not 30 days. Our structured approach helps you understand your situation quickly and clearly.</p>
+                    <div class="vs-others">
+                        <span class="us">Us: Quick clarity & structured process</span>
+                        <span class="them">Others: Lengthy, confusing procedures</span>
+                    </div>
+                </div>
+
+                <div class="different-item">
+                    <div class="different-icon">💰</div>
+                    <h3>Transparent Pricing</h3>
+                    <p>No hidden fees. No percentage cuts. Clear, upfront pricing for exactly what you need—from $10 digital packs to full navigator support.</p>
+                    <div class="vs-others">
+                        <span class="us">Us: Clear pricing, no percentage fees</span>
+                        <span class="them">Others: Hidden costs & percentage cuts</span>
+                    </div>
+                </div>
+
+                <div class="different-item">
+                    <div class="different-icon">🎓</div>
+                    <h3>Educational First</h3>
+                    <p>We believe in empowering you with knowledge. Understand your rights, the process, and your options before making any decisions.</p>
+                    <div class="vs-others">
+                        <span class="us">Us: Education & empowerment focus</span>
+                        <span class="them">Others: "Trust us, we'll handle it"</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials & Case Snapshots -->
+    <section class="testimonials">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Real Stories, Real Results</h2>
+                <p>See how we've helped others navigate their psychological injury claims</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"I was drowning in confusion about my workplace stress claim. ClaimClarity gave me a clear roadmap and stayed with me every step. I got $42,000 for my anxiety and depression caused by workplace bullying."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <strong>Sarah M.</strong>
+                            <span>Healthcare Worker, Melbourne</span>
+                        </div>
+                        <div class="case-result">
+                            <span class="result-amount">$42,000</span>
+                            <span class="result-type">Anxiety & Depression</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The intake call was a game-changer. They helped me understand that my burnout was actually compensable. The Navigator service was worth every penny—I couldn't have done it alone."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <strong>James T.</strong>
+                            <span>Teacher, Brisbane</span>
+                        </div>
+                        <div class="case-result">
+                            <span class="result-amount">$28,500</span>
+                            <span class="result-type">Burnout Syndrome</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Finally, someone who actually listened and understood. They didn't just tell me I had a case—they showed me exactly how to build it. The empathy made all the difference during a really dark time."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <strong>Maria L.</strong>
+                            <span>Retail Manager, Sydney</span>
+                        </div>
+                        <div class="case-result">
+                            <span class="result-amount">$35,200</span>
+                            <span class="result-type">PTSD from Workplace Trauma</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-snapshots">
+                <h3>Case Snapshots</h3>
+                <div class="snapshots-grid">
+                    <div class="snapshot">
+                        <div class="snapshot-header">
+                            <span class="industry">Hospitality</span>
+                            <span class="amount">$31,000</span>
+                        </div>
+                        <p><strong>Issue:</strong> Manager consistently yelled, made unrealistic demands, ignored safety concerns</p>
+                        <p><strong>Result:</strong> Anxiety disorder, 6 months off work</p>
+                        <p><strong>Timeline:</strong> 4 months from first call to settlement</p>
+                    </div>
+
+                    <div class="snapshot">
+                        <div class="snapshot-header">
+                            <span class="industry">Corporate</span>
+                            <span class="amount">$47,500</span>
+                        </div>
+                        <p><strong>Issue:</strong> Systematic bullying, exclusion from meetings, impossible deadlines</p>
+                        <p><strong>Result:</strong> Depression, panic attacks, career change required</p>
+                        <p><strong>Timeline:</strong> 5 months from assessment to payout</p>
+                    </div>
+
+                    <div class="snapshot">
+                        <div class="snapshot-header">
+                            <span class="industry">Healthcare</span>
+                            <span class="amount">$52,800</span>
+                        </div>
+                        <p><strong>Issue:</strong> Chronic understaffing, traumatic patient incidents, no debriefing support</p>
+                        <p><strong>Result:</strong> PTSD, unable to return to healthcare</p>
+                        <p><strong>Timeline:</strong> 6 months with full Navigator support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="final-cta">
+        <div class="section-container">
+            <div class="cta-content">
+                <h2>Ready to Get the Clarity You Deserve?</h2>
+                <p>Take the first step toward understanding your rights and options. No obligation, completely confidential.</p>
+                <div class="cta-buttons">
+                    <a href="#quiz" class="btn-primary">Take the Assessment</a>
+                    <a href="#" class="btn-secondary book-call-btn">Book Free 30-Min Call</a>
+                </div>
+                <div class="cta-guarantees">
+                    <div class="guarantee">
+                        <span class="guarantee-icon">🔒</span>
+                        <span>100% Confidential</span>
+                    </div>
+                    <div class="guarantee">
+                        <span class="guarantee-icon">⚡</span>
+                        <span>Quick & Easy</span>
+                    </div>
+                    <div class="guarantee">
+                        <span class="guarantee-icon">💝</span>
+                        <span>Empathetic Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>ClaimClarity</h3>
+                    <p>Your claim clarity companions. We're not lawyers—we're better. We provide empathetic, structured guidance for psychological injury claims.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#">Claim Assessment</a></li>
+                            <li><a href="#">Intake Calls</a></li>
+                            <li><a href="#">Navigator Support</a></li>
+                            <li><a href="#">Digital Claim Packs</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Understanding Your Rights</a></li>
+                            <li><a href="#">Claim Process Guide</a></li>
+                            <li><a href="#">Mental Health Resources</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:hello@claimclarity.com.au">hello@claimclarity.com.au</a></li>
+                            <li><a href="tel:1300-CLARITY">1300 CLARITY</a></li>
+                            <li>Melbourne, Victoria</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-legal">
+                <div class="legal-disclaimers">
+                    <h4>Important Legal Disclaimers</h4>
+                    <div class="disclaimer-grid">
+                        <div class="disclaimer">
+                            <strong>Not Legal Advice:</strong> ClaimClarity provides administrative support and guidance only. We are not lawyers and do not provide legal advice. All information is general in nature and should not be relied upon as legal advice for your specific situation.
+                        </div>
+                        <div class="disclaimer">
+                            <strong>No Guarantee of Outcomes:</strong> Past results do not guarantee future outcomes. Every case is unique and depends on individual circumstances. We cannot guarantee that you will have a successful claim or any specific outcome.
+                        </div>
+                        <div class="disclaimer">
+                            <strong>Professional Consultation:</strong> We strongly recommend consulting with qualified legal and medical professionals for advice specific to your situation. Our services complement but do not replace professional legal or medical advice.
+                        </div>
+                        <div class="disclaimer">
+                            <strong>Privacy & Confidentiality:</strong> All information shared with ClaimClarity is treated as confidential. We comply with Australian Privacy Principles and do not share your information without consent, except as required by law.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div class="footer-links-bottom">
+                        <a href="#">Terms & Conditions</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Refund Policy</a>
+                        <a href="#">Complaints Process</a>
+                    </div>
+                    <div class="footer-copyright">
+                        <p>&copy; 2024 ClaimClarity Pty Ltd. ABN: 12 345 678 901. All rights reserved.</p>
+                        <p>ClaimClarity is not a law firm and does not provide legal services. We provide administrative support and guidance for workers' compensation claims.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Calendar Modal -->
+    <div id="calendar-modal" class="calendar-modal">
+        <div class="calendar-content">
+            <button class="calendar-close" id="calendar-close">&times;</button>
+            <div class="calendar-header">
+                <h3>Book Your Free 30-Minute Intake Call</h3>
+                <p class="calendar-intro">"This is your time. Tell us everything. We'll listen."</p>
+                <p class="calendar-description">
+                    During this confidential call, we'll discuss your situation, answer your questions, 
+                    and help you understand your options. No pressure, no sales pitch—just genuine support 
+                    and clarity about your next steps.
+                </p>
+            </div>
+            <!-- Calendly inline widget -->
+            <div class="calendly-inline-widget" 
+                 data-url="https://calendly.com/claimclarity/30min-intake-call?hide_event_type_details=1&hide_gdpr_banner=1"
+                 data-processed="true">
+            </div>
+        </div>
+    </div>
+
+    <!-- Thank You Page -->
+    <div id="thank-you-page" class="thank-you-page">
+        <div class="thank-you-content">
+            <div class="thank-you-icon">🎉</div>
+            <h1 class="thank-you-title">Thank You for Booking!</h1>
+            <p class="thank-you-subtitle">Your intake call has been scheduled successfully.</p>
+            
+            <div class="thank-you-details">
+                <h4>What Happens Next?</h4>
+                <ul>
+                    <li>You'll receive a confirmation email with your call details</li>
+                    <li>We'll send you a brief preparation guide 24 hours before your call</li>
+                    <li>During the call, we'll discuss your situation in complete confidence</li>
+                    <li>You'll get clear guidance on your options and next steps</li>
+                    <li>If we can help, we'll explain our services and pricing transparently</li>
+                </ul>
+                
+                <div class="next-steps">
+                    <h5>Prepare for Your Call:</h5>
+                    <p>
+                        Think about your workplace situation, any incidents or patterns that concern you, 
+                        and how your work has affected your mental health. Don't worry about having 
+                        everything perfect—we're here to help you work through it all.
+                    </p>
+                </div>
+            </div>
+            
+            <a href="#" class="back-to-site" id="back-to-site">
+                ← Back to ClaimClarity
+            </a>
+        </div>
+    </div>
+
+    <!-- Calendly JavaScript -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="script.js"></script>
+</body>
+</html> 
