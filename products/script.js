@@ -47,6 +47,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Handle navigation to landing page with anchors
+document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        // Let the browser handle the navigation to landing page with anchor
+        // The landing page JavaScript will handle the scrolling
+        return true;
+    });
+});
+
 // Calendar Modal Functions
 function openCalendar() {
     if (calendarModal) {

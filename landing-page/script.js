@@ -27,6 +27,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Handle anchor links on page load (for navigation from other pages)
+    function handlePageLoadAnchor() {
+        const hash = window.location.hash;
+        if (hash) {
+            // Wait a bit for the page to fully load
+            setTimeout(() => {
+                const targetSection = document.querySelector(hash);
+                if (targetSection) {
+                    const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 100);
+        }
+    }
+    
+    // Call on page load
+    handlePageLoadAnchor();
+    
+    // Also handle when hash changes (back/forward navigation)
+    window.addEventListener('hashchange', handlePageLoadAnchor);
+    
     // Smooth scrolling for anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     
