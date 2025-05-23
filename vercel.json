@@ -1,35 +1,16 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "**/*",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "^/$",
-      "dest": "/landing-page/index.html"
+      "source": "/",
+      "destination": "/landing-page/index.html"
     },
     {
-      "src": "^/landing-page/?$",
-      "dest": "/landing-page/index.html"
+      "source": "/landing-page",
+      "destination": "/landing-page/index.html"
     },
     {
-      "src": "^/products/?$",
-      "dest": "/products/index.html"
-    },
-    {
-      "src": "^/landing-page/(.*)$",
-      "dest": "/landing-page/$1"
-    },
-    {
-      "src": "^/products/(.*)$",
-      "dest": "/products/$1"
-    },
-    {
-      "src": "^/(.*)$",
-      "dest": "/$1"
+      "source": "/products",
+      "destination": "/products/index.html"
     }
   ],
   "headers": [
@@ -59,5 +40,7 @@
         }
       ]
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 } 
